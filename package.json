@@ -5,8 +5,7 @@
   "private": false,
   "scripts": {
     "start": "node app.js",
-    "deploy": "gulp deploy",
-    "test": "ava test/**/*.js --verbose"
+    "postinstall": "gulp default"
   },
   "dependencies": {
     "ajv": "^6.4.0",
@@ -45,7 +44,10 @@
     "gulp-clean-css": "^3.9.3",
     "gulp-minify": "^2.1.0",
     "gulp-rename": "^1.2.2",
-    "mongodb-uri": "^0.9.7"
+    "mongodb-uri": "^0.9.7",
+    "run-sequence": "^2.2.1",
+    "supertest": "^3.0.0",
+    "wait.for": "^0.6.6"
   },
   "devDependencies": {
     "ava": "^0.25.0",
