@@ -13,7 +13,6 @@ const colors = require('colors');
 const common = require('./lib/common');
 const mongodbUri = require('mongodb-uri');
 let handlebars = require('express-handlebars');
-
 // Validate our settings schema
 const Ajv = require('ajv');
 const ajv = new Ajv({useDefaults: true});
@@ -243,6 +242,7 @@ app.use(session({
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'views', 'themes')));
 
+
 // Make stuff accessible to our router
 app.use((req, res, next) => {
     req.handlebars = handlebars;
@@ -258,7 +258,7 @@ app.use('/', user);
 app.use('/', admin);
 app.use('/paypal', paypal);
 app.use('/stripe', stripe);
-app.use('/authorizenet', authorizenet);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
@@ -338,13 +338,14 @@ MongoClient.connect(config.databaseConnectionString, {}, (err, client) => {
     app.config = config;
     app.port = app.get('port');
 
+
     // run indexing
     common.runIndexing(app)
     .then(app.listen(app.get('port')))
     .then(() => {
         // lift the app
         app.emit('appStarted');
-        console.log(colors.green('expressCart running on host: http://localhost:' + app.get('port')));
+        console.log(colors.green('schoolsupplieskit running on host: http://localhost:' + app.get('port')));
     })
     .catch((err) => {
         console.error(colors.red('Error setting up indexes:' + err));

@@ -4,8 +4,8 @@ const colors = require('colors');
 const async = require('async');
 const _ = require('lodash');
 const common = require('../lib/common');
-
 // These is the customer facing routes
+
 router.get('/payment/:orderId', async (req, res, next) => {
     let db = req.app.db;
     let config = req.app.config;
@@ -95,7 +95,6 @@ router.get('/cartPartial', (req, res) => {
         session: req.session
     });
 });
-
 // show an individual product
 router.get('/product/:id', (req, res) => {
     let db = req.app.db;
@@ -394,7 +393,6 @@ router.get('/category/:cat/:pageNum?', (req, res) => {
         console.error(colors.red('Error getting products for category', err));
     });
 });
-
 // return sitemap
 router.get('/sitemap.xml', (req, res, next) => {
     let sm = require('sitemap');
@@ -427,7 +425,6 @@ router.get('/sitemap.xml', (req, res, next) => {
         });
     });
 });
-
 router.get('/page/:pageNum', (req, res, next) => {
     let db = req.app.db;
     let config = req.app.config;
@@ -473,6 +470,11 @@ router.get('/:page?', (req, res, next) => {
     let config = req.app.config;
     let numberProducts = config.productsPerPage ? config.productsPerPage : 6;
 
+    if(req.params.page === '/hqa'){
+        router.get('/hqa', (req, res) => {
+            res.render('/hqa');
+        });
+    };
     // if no page is specified, just render page 1 of the cart
     if(!req.params.page){
         Promise.all([
@@ -517,6 +519,7 @@ router.get('/:page?', (req, res, next) => {
             if(err){
                 console.error(colors.red('Error getting page', err));
             }
+          
             // if we have a page lets render it, else throw 404
             if(page){
                 res.render(`${config.themeViews}page`, {

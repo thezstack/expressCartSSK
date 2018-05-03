@@ -1,63 +1,193 @@
 {{> themes/Mono/front-menu}}
-<div class="productsWrapper col m8 offset-m1">
-    {{#if filtered}}
-        <div class="product-layout col m12">
-            {{#if menuLink}}
-            <h4>Category: <strong>{{menuLink.title}}</strong></h4>
-            {{else}}
-            <h4>Search results: <strong>{{searchTerm}}</strong></h4>
-            {{/if}}
+
+
+<div class="bg block app-block-intro" style="height:90vh">
+  <div class="container-fluid">
+    <h1><strong>School Supply Kits</strong></h1>
+
+  </div>
+</div>
+
+<div class="block block-bordered-lg">
+  <div class="container text-center app-translate-15" data-transition="entrance">
+    <blockquote class="pull-quote">
+      <img src="/images/pencil-box-color.svg">
+      <p>
+        " We believe a parent should spend more time with preparing for the academic and social challenges facing their child for the new school year rather than shopping."
+      </p>
+      <cite>Zubair Mughal, Co-Founder</cite>
+    </blockquote>
+  </div>
+</div>
+
+<div class="block block-bordered-lg ">
+  <div class="container text-center" style="margin-bottom:2em;"><h1> <strong>Our Process </strong></h1></div>
+<div class="card-container">
+
+  <div class="card border card-space" style="width: 18rem;">
+    <div class="card-body">
+      <img
+        src="/images/contract.svg"
+        class="app-translate-5 img-width-sm mx-auto d-block"
+        data-transition="entrance">
+      <h5 class="card-title text-center"><strong>The First Step</strong></h5>
+
+      <p class="card-text text-center">We learn about the classroom needs. </p>
+
         </div>
-    {{/if}}
-    <div class="row product-layout">
-        {{#ifCond results.length '==' 0}}
-            <div class="col m12">
-                <p class="text-danger">No products found</p>
+      </div>
+      <div class="card border card-space" style="width: 18rem;">
+        <div class="card-body ">
+          <img
+            src="images/pencil-case.svg"
+            class="app-translate-5 img-width-sm mx-auto d-block"
+            data-transition="entrance">
+          <h5 class="card-title text-center"><strong>The Second Step</strong></h5>
+
+          <p class="card-text text-center">We use magic to gather, organize, and create custom school supply kits. </p>
+
             </div>
-        {{/ifCond}}
-        {{#each results}}
-            <div class="{{perRowClass ../config.productsPerRow}}">
-                <div class="thumbnail">
-                    {{#if productPermalink}}
-                        <div class="product_wrapper">
-                            <a href="/product/{{this.productPermalink}}">
-                                <div class="vertical-center thumbnail-image-container">
-                                    {{#if productImage}}
-                                        <img class="img-responsive" src="{{this.productImage}}" alt="...">
-                                    {{else}}
-                                        <img class="img-responsive" src="/uploads/placeholder.png" alt="...">
-                                    {{/if}}
-                                </div>
-                                <h3 class="product-title product-title-home top-pad-10">
-                                    {{this.productTitle}}
-                                </h3>
-                            </a>
-                        </div>
-                    {{else}}
-                        <a href="/product/{{this._id}}">
-                            <div class="vertical-center thumbnail-image-container">
-                                {{#if productImage}}
-                                    <img class="img-responsive" src="{{this.productImage}}" alt="...">
-                                {{else}}
-                                    <img class="img-responsive" src="/uploads/placeholder.png" alt="...">
-                                {{/if}}
-                            </div>
-                            <h3 class="product-title product-title-home top-pad-10">
-                                {{this.productTitle}}
-                            </h3>
-                        </a>
-                    {{/if}}
-                    <h3 class="product-price text-center">
-                        {{currencySymbol ../config.currencySymbol}}{{formatAmount productPrice}}
-                    </h3>
-                    <p class="text-center">
-                        <a class="btn waves-effect waves-light black add-to-cart" data-id="{{this._id}}" data-link="{{this.productPermalink}}" data-has-options="{{checkProductOptions this.productOptions}}" role="button">Add to cart</a>
-                    </p>
+          </div>
+          <div class="card border card-space" style="width: 18rem;">
+            <div class="card-body">
+              <img
+                src="images/delivery-truck.svg"
+                class="app-translate-5 img-width mx-auto d-block"
+                data-transition="entrance">
+              <h5 class="card-title text-center"><strong>The Last Step</strong></h5>
+
+              <p class="card-text text-center">Our team delivers and distributes school supply kits to parents at your pickup location. </p>
+
                 </div>
-            </div>
-        {{/each}}
+              </div>
+              <div class="card border card-space" style="width: 18rem;">
+                <div class="card-body">
+                  <img
+                    src="images/piggybank.svg"
+                    class="app-translate-5 img-width mx-auto d-block"
+                    data-transition="entrance">
+                  <h5 class="card-title text-center"><strong>Bonus</strong></h5>
+
+                  <p class="card-text text-center">Your school is rewarded with our commission based system. </p>
+
+                    </div>
+                  </div>
+
+
     </div>
 </div>
+    <a class="carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="icon icon-chevron-thin-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="icon icon-chevron-thin-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="block block-bordered-lg pb-0 app-block-stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 col-md-6">
+        <img
+          src="images/girl.jpg"
+          class="app-translate-5"
+          data-transition="entrance">
+        <hr class="mt-0 mb-5 mx-auto d-md-none">
+      </div>
+      <div class="col-lg-5 col-md-6 text-center text-md-left pb-5">
+        <p class="lead">
+          We enjoy creating custom made school supply kits for a variety of elementary institutions. During our journey, we've learned the true value of time. On average, it takes a parent an <strong>hour and a half</strong> for each child to complete their school supply shopping.
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="block block-bordered-lg">
+  <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-sm-8 text-center mb-5">
+      <p class="lead mx-auto">With <strong>years of collective experience</strong>, we take the requirements of the school and deliver a quality supply kit service.</p>
+
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="featured-list">
+          <li class="mb-5">
+            <div class="featured-list-icon text-primary">
+              <span class="icon icon-image"></span>
+            </div>
+            <p class="featured-list-icon-text mb-0"><strong>Custom Made Kits</strong></p>
+            <p class="featured-list-icon-text">
+            Our school supply kits are custom built to match teachers' supply lists for any grade and delivered directly to your school.
+            </p>
+          </li>
+
+          <li class="mb-5">
+            <div class="featured-list-icon text-primary">
+              <span class="icon icon-hour-glass"></span>
+            </div>
+            <p class="featured-list-icon-text mb-0"><strong>Time Savings</strong></p>
+            <p class="featured-list-icon-text">
+              You save tons of time by using our world class service. We remove the stressful and time consuming activity of school supply shopping. Your time is better spent with your child.
+            </p>
+          </li>
+
+        </ul>
+      </div>
+      <div class="col-sm-6">
+        <ul class="featured-list">
+
+          <li class="mb-5">
+            <div class="featured-list-icon text-primary">
+              <span class="icon icon-pencil"></span>
+            </div>
+            <p class="featured-list-icon-text mb-0"><strong>High Quality Supplies</strong></p>
+            <p class="featured-list-icon-text">
+              Your child deserves the best. Each kit contains high quality, name brand school supplies and the program is easy to offer at your school.
+            </p>
+          </li>
+
+          <li class="mb-5">
+            <div class="featured-list-icon text-primary">
+              <span class="icon icon-emoji-happy"></span>
+            </div>
+            <p class="featured-list-icon-text mb-0"><strong>Low Price</strong></p>
+            <p class="featured-list-icon-text">
+              We do not believe in sacrificing your wallet for good quality products. We find the best price for you.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="block block-bordered-lg text-center">
+  <div class="container-fluid">
+    <p class="lead mb-4">
+      Get in touch to see what we can do for your school today!
+    <form class="form-inline d-flex justify-content-center">
+      <input class="form-control mb-3" placeholder="name">
+      <input class="form-control mb-3 ml-sm-1"  placeholder="email">
+      <button class="btn btn-primary mb-3 ml-sm-1">Submit</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
 <input type="hidden" id="productsPerPage" value="{{productsPerPage}}" >
 <input type="hidden" id="pageNum" value="{{pageNum}}">
 <input type="hidden" id="totalProductCount" value="{{totalProductCount}}">

@@ -6,6 +6,11 @@ const fs = require('fs');
 const path = require('path');
 const router = express.Router();
 
+
+
+
+
+
 router.get('/admin/products', common.restrict, (req, res, next) => {
     const db = req.app.db;
     // get the top results
@@ -346,5 +351,7 @@ router.post('/admin/product/deleteimage', common.restrict, common.checkAccess, (
         }
     });
 });
+
+
 
 module.exports = router;
