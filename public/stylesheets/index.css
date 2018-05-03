@@ -44,6 +44,9 @@
  }
 .card-container{
   display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  flex-flow: row wrap;
 }
  .card-space{
    margin-bottom:2em;
@@ -642,3 +645,33 @@ overflow: hidden; }
                 height: 100px; }
               .pull-quote > p {
                 font-size: 1.5rem; } }
+
+                .featured-list {
+                  list-style: none;
+                  padding: 0; }
+                  .featured-list .featured-list-icon-text {
+                    font-size: 16px; }
+                  .featured-list li {
+                    position: relative;
+                    padding-left: 80px; }
+                
+                .featured-list-icon {
+                  position: absolute;
+                  top: 0;
+                  left: 10px;
+                  display: inline-block;
+                  font-size: 36px;
+                  text-align: center;
+                  line-height: 0;
+                  width: 60px; }
+                
+                .featured-list-bordered li {
+                  position: relative;
+                  padding-left: 110px; }
+                
+                .featured-list-bordered .featured-list-icon {
+                  border: 1px solid #e9ecef;
+                  border-radius: 50%;
+                  height: 80px;
+                  width: 80px;
+                line-height: 89px; }

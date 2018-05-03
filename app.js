@@ -50,6 +50,7 @@ if(config.paymentGateway === 'authorizenet'){
 }
 
 // require the routes
+const hqa = require('./routes/hqa');
 const index = require('./routes/index');
 const admin = require('./routes/admin');
 const product = require('./routes/product');
@@ -250,6 +251,7 @@ app.use((req, res, next) => {
 });
 
 // setup the routes
+app.use('/', hqa);
 app.use('/', index);
 app.use('/', customer);
 app.use('/', product);

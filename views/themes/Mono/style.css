@@ -246,4 +246,6 @@ input:not([type]):focus:not([readonly])+label, input[type=text]:not(.browser-def
     .footer {
         padding-top: 10px;
     }
+
+  
 }

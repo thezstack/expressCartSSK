@@ -26,15 +26,15 @@
 
         <link rel="stylesheet" href="/stylesheets/pushy.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="/stylesheets/codemirror-style.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.11/css/all.css" integrity="sha384-p2jx59pefphTFIpeqCcISO9MdVfIm4pNnsL08A6v5vaQc4owkQqxMV8kg4Yvhaw/" crossorigin="anonymous">
         <link rel="stylesheet" href="/stylesheets/style{{config.env}}.css">
         {{#if admin}}
         <link rel="stylesheet" href="/stylesheets/admin{{config.env}}.css">
         {{/if}}
-
+      <script  src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js"></script>
@@ -120,7 +120,7 @@
                         {{/ifCond}}
                         {{/unless}}
                         {{#if session.user}}
-							<li><a href="/admin/logout"><i class="fa fa-sign-out" aria-hidden="true"> </i>Logout</a></li>
+							<li><a href="/admin/logout"><i class="fas fa-sign-out-alt" aria-hidden="true"> </i>Logout</a></li>
 						{{/if}}
 
 					</ul>

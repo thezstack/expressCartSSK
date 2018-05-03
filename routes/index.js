@@ -5,31 +5,6 @@ const async = require('async');
 const _ = require('lodash');
 const common = require('../lib/common');
 // These is the customer facing routes
-
-router.get('/payment/:orderId', async (req, res, next) => {
-    let db = req.app.db;
-    let config = req.app.config;
-
-    // render the payment complete message
-    db.orders.findOne({_id: common.getId(req.params.orderId)}, async (err, result) => {
-        if(err){
-            console.info(err.stack);
-        }
-        res.render(`${config.themeViews}payment_complete`, {
-            title: 'Payment complete',
-            config: req.app.config,
-            session: req.session,
-            pageCloseBtn: common.showCartCloseBtn('payment'),
-            result: result,
-            message: common.clearSessionValue(req.session, 'message'),
-            messageType: common.clearSessionValue(req.session, 'messageType'),
-            helpers: req.handlebars.helpers,
-            showFooter: 'showFooter',
-            menu: common.sortMenu(await common.getMenu(db))
-        });
-    });
-});
-
 router.get('/checkout', async (req, res, next) => {
     let config = req.app.config;
 
@@ -55,6 +30,44 @@ router.get('/checkout', async (req, res, next) => {
         showFooter: 'showFooter'
     });
 });
+router.get('/payment/:orderId', async (req, res, next) => {
+    let db = req.app.db;
+    let config = req.app.config;
+    
+    // render the payment complete message
+    db.orders.findOne({_id: common.getId(req.params.orderId)}, async (err, result) => {
+        if(err){
+            console.info(err.stack);
+        }
+        res.render(`${config.themeViews}payment_complete`, {
+            title: 'Payment complete',
+            config: req.app.config,
+            session: req.session,
+            pageCloseBtn: common.showCartCloseBtn('payment'),
+            result: result,
+            message: common.clearSessionValue(req.session, 'message'),
+            messageType: common.clearSessionValue(req.session, 'messageType'),
+            helpers: req.handlebars.helpers,
+            showFooter: 'showFooter',
+            menu: common.sortMenu(await common.getMenu(db))
+        });
+    });
+});
+
+router.get('/checkout', async (req, res, next) => {
+    let config = req.app.config;
+    console.log(config)
+    // if there is no items in the cart then render a failure
+    if(!req.session.cart){
+        req.session.message = 'The are no items in your cart. Please add some items before checking out';
+        req.session.messageType = 'danger';
+        res.redirect('/');
+        return;
+    }
+
+    // render the checkout
+    res.render('../views/themes/Mono/checkout');
+});
 
 router.get('/pay', async (req, res, next) => {
     const config = req.app.config;
@@ -66,7 +79,6 @@ router.get('/pay', async (req, res, next) => {
         res.redirect('/checkout');
         return;
     }
-
     // render the payment page
     res.render(`${config.themeViews}pay`, {
         title: 'Pay',
