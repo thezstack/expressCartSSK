@@ -5,6 +5,7 @@
   "private": false,
   "scripts": {
     "start": "node app.js",
+    "deploy": "gulp deploy",
     "postinstall": "gulp default"
   },
   "dependencies": {
