@@ -4,8 +4,7 @@
   "description": "A fully functioning Node.js shopping cart with Stripe, PayPal and Authorize.net payments.",
   "private": false,
   "scripts": {
-    "start": "node app.js",
-    "postinstall": "gulp deploy"
+    "start": "node app.js"
   },
   "dependencies": {
     "ajv": "^6.4.0",
