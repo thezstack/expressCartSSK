@@ -204,7 +204,7 @@ router.post('/customer/forgotten_action', (req, res) => {
                     subject: 'Forgotten password request',
                     body: `You are receiving this because you (or someone else) have requested the reset of the password for your user account.\n\n
                         Please click on the following link, or paste this into your browser to complete the process:\n\n
-                        ${config.baseUrl}/customer/reset/${passwordToken}\n\n
+                        https://school-kits.com/customer/reset/${passwordToken}\n\n
                         If you did not request this, please ignore this email and your password will remain unchanged.\n`
                 };
 

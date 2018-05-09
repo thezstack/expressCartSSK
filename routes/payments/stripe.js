@@ -16,6 +16,7 @@ router.post('/checkout_action', (req, res, next) => {
         currency: stripeConfig.stripeCurrency,
         source: req.body.stripeToken,
         description: stripeConfig.stripeDescription
+        
     }, (err, charge) => {
         if(err){
             console.info(err.stack);
@@ -42,11 +43,11 @@ router.post('/checkout_action', (req, res, next) => {
             orderEmail: req.body.shipEmail,
             orderFirstname: req.body.shipFirstname,
             orderLastname: req.body.shipLastname,
-            orderAddr1: req.body.shipAddr1,
-            orderAddr2: req.body.shipAddr2,
-            orderCountry: req.body.shipCountry,
-            orderState: req.body.shipState,
-            orderPostcode: req.body.shipPostcode,
+            // orderAddr1: req.body.shipAddr1,
+            // orderAddr2: req.body.shipAddr2,
+            // orderCountry: req.body.shipCountry,
+            // orderState: req.body.shipState,
+            // orderPostcode: req.body.shipPostcode,
             orderPhoneNumber: req.body.shipPhoneNumber,
             orderStatus: paymentStatus,
             orderDate: new Date(),
@@ -73,16 +74,25 @@ router.post('/checkout_action', (req, res, next) => {
                     req.session.paymentEmailAddr = newDoc.ops[0].orderEmail;
                     req.session.paymentApproved = true;
                     req.session.paymentDetails = '<p><strong>Order ID: </strong>' + newId + '</p><p><strong>Transaction ID: </strong>' + charge.id + '</p>';
-
+                    let items = req.session.cart;
+                    let x;
+                    let products = [];
+                 
                     // set payment results for email
                     let paymentResults = {
                         message: req.session.message,
                         messageType: req.session.messageType,
                         paymentEmailAddr: req.session.paymentEmailAddr,
                         paymentApproved: true,
-                        paymentDetails: req.session.paymentDetails
+                        paymentDetails: req.session.paymentDetails,
+                        orderName: req.body.shipFirstname + ' ' + req.body.shipLastname,
+                        orderProducts: products,
+                        orderTotal: 'Total Cost: ' + req.session.totalCartAmount
                     };
 
+                    for(x = 0; x < items.length; x++){
+                        products.push(items[x].title + ' : ' + items[x].quantity);
+                     };
                     // clear the cart
                     if(req.session.cart){
                         req.session.cart = null;

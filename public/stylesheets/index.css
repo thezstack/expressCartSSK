@@ -1,8 +1,11 @@
 
  .bg {
 
-   background-position: bottom;
-     background-image: url("../images/color_pencils.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ background-image: url("../images/color_pencils.jpg");
 
 
  }
@@ -305,9 +308,7 @@ overflow: hidden; }
   letter-spacing: .15em;
 
 }
-.slider-color{
-  background-color: ;
-}
+
 .app-navbar .navbar-brand {
   font-size: 13px;
 }
@@ -675,3 +676,19 @@ overflow: hidden; }
                   height: 80px;
                   width: 80px;
                 line-height: 89px; }
+
+              .img-center{
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 50%;          
+}
+.title{
+  font-family: 'Quicksand', sans-serif;
+color:black;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+}
+

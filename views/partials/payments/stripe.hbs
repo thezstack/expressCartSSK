@@ -10,12 +10,11 @@
             data-amount="{{amountNoDecimal session.totalCartAmount}}"
             data-name="{{config.cartTitle}}"
             data-description="{{config.cartTitle}} Payment"
-            data-image="{{paymentConfig.stripeLogoURL}}"
             data-locale="auto"
             data-zip-code="false"
             data-currency="{{paymentConfig.stripeCurrency}}">
-            <i class="fa fa-cc-stripe fa-lg" aria-hidden="true"></i> Process payment <i class="fa fa-cc-stripe fa-lg" aria-hidden="true"></i>
+            Pay Now
         </button>
-        <script src="https://checkout.stripe.com/v2/checkout.js"></script>
+        <script src="https://checkout.stripe.com/v3/checkout.js"></script>
     </form>
 </div>

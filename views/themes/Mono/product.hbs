@@ -1,10 +1,13 @@
-{{> themes/Mono/front-menu}}
-<div class="product-layout s12 col m8 offset-m1">
+
+<div class="product-layout s12 col m8 offset-m1 " style="margin-top:100px;">
     <div class="row">
         <div class="col s12 m6 pull-right">
             <div class="row">
             <h1 class="col s12 m10 product-title">{{result.productTitle}}</h1>
             <h4 class="col s12 m10 product-price">{{currencySymbol config.currencySymbol}}{{result.productPrice}}</h4>
+               <div class="col s10 body_text">
+                {{{productDescription}}}
+            </div>
             {{#if productOptions}}
                 <h4 class="col s12 m10 product-option">Options</h4>
                 <div class="col s12 m10">
@@ -55,9 +58,7 @@
             <div class="btnAddToCart">
                 <button class="btn waves-effect waves-light black col s10 product-add-to-cart" type="button">Add to cart</button>
             </div>
-            <div class="col s10 body_text">
-                {{{productDescription}}}
-            </div>
+           
             </div>
         </div>
         <div class="col s12 m6 pull-left">
@@ -69,7 +70,7 @@
                 </div>
             {{else}}
                 <div class="title-image-container">
-                    <img src="/uploads/placeholder.png" id="product-title-image" class="product-title-image img-responsive" alt="...">
+                    <img src="/uploads/pencil-case.svg" id="product-title-image" class="product-title-image img-responsive" alt="...">
                 </div>
             {{/if}}
             {{#ifCond images.length '>' 1}}

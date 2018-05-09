@@ -2,11 +2,11 @@
     "properties": {
         "cartTitle": {
             "type": "string",
-            "default": "expressCart"
+            "default": "School Supplies Kit"
         },
         "cartDescription": {
             "type": "string",
-            "default": "This is my expressCart"
+            "default": "School Supplies Kit"
         },
         "cartLogo": {
             "type": "string"

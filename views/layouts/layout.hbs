@@ -19,11 +19,12 @@
         {{/if}}
 		<meta name="keywords" content="{{config.cartTitle}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
-        <link rel="stylesheet" href="/stylesheets/bootstrap-xl.css">
-<link rel="stylesheet" href="/stylesheets/index.css">
+        
+         <link rel="stylesheet" href="/stylesheets/bootstrap-xl.css">
+        <link rel="stylesheet" href="/stylesheets/index.css">
 
 
-
+        <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">         
         <link rel="stylesheet" href="/stylesheets/pushy.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
@@ -34,7 +35,7 @@
         {{#if admin}}
         <link rel="stylesheet" href="/stylesheets/admin{{config.env}}.css">
         {{/if}}
-      <script  src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js"></script>
@@ -44,7 +45,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
         <script src="/javascripts/jquery.bootpag.min.js"></script>
         <script src="/javascripts/cssbeautify.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
 		<script src="/javascripts/expressCart{{config.env}}.js"></script>
         <script src="/javascripts/jquery.dotdotdot.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
@@ -82,14 +83,14 @@
     {{/if}}
 		<!-- Static navbar -->
 	    <nav class="navbar navbar-default navbar-static-top">
-			<div class="container-fluid mainNavBar">
+			<div class="container-fluid mainNavBar " style="border-bottom: 5px solid #e7e9ec;">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed offcanvas-trigger" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					{{!-- <button type="button" class="navbar-toggle collapsed offcanvas-trigger" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-					</button>
+					</button> --}}
                     {{#if admin}}
                         <a class="navbar-brand navbar-brand-image" href="/admin"><img class="img-responsive" src="/images/pencil-box-color.svg"></a>
                     {{else}}
@@ -104,8 +105,8 @@
                         {{/isNull}}
                     {{/if}}
 				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav navbar-right">
+				<div id="navbar" class="">
+					<ul class="nav navbar-nav" style="float:right">
                         {{#unless admin}}
 												<li><a href="/HQA">HQA</a> </li>
                         {{#ifCond page '!=' 'checkout'}}
@@ -156,4 +157,27 @@
 
         <script src="/javascripts/pushy.min.js"></script>
 	</body>
+    {{#if admin}}
+    <div>
+
+    </div>
+    {{else}}
+<div class="block app-block-footer" style="background-color:#e7e9ec">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul class="list-unstyled list-spaced">
+          <li><h5 class="text-uppercase" style="color:black;">Contact</h6></li>
+          <a href="mailto:schoolsupplieskit@gmail.com"><li style="color:black;"><i class="far fa-envelope"></i> schoolsupplieskit@gmail.com</li></a>
+        </ul>
+      </div>
+
+
+       <div class="col-md-6">
+        <h5 class="text-uppercase" style="color:black;">About</h6>
+        <p style="color:black"><i class="fas fa-seedling"></i> We are a company focused on creating doors for the community. Our goal is to create a better chance for your child to succeed and grow.</p>
+      </div>
+    </div>
+</div>
+    {{/if}}
 </html>

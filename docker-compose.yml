@@ -3,6 +3,7 @@ services:
   expresscart:
     image: "node:8"
     build: .
+    command: node app.js
     container_name: "expresscart"
     environment:
       NODE_ENV: development
