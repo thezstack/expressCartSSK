@@ -5,11 +5,11 @@
                 <h2 class="text-success">Your payment has been successfully processed.</h2>
             {{else}}
                 <h2 class="text-danger">Your payment has failed. Please try again or contact us.</h2>
-                <h2>contact: <a href="mailto:schoolsupplieskit@gmail.com">schoolsupplieskit@gmail.com</a></h2>
+                <h2>contact: <a href="mailto:schoolsupplieskit@gmail.com"><i class="far fa-envelope"></i>schoolsupplieskit@gmail.com</a></h2>
             {{/ifCond}}
             {{#if result}}
                 <div>
-                  {{result.firstName}} {{result.lastName}}
+                 <p>{{result.firstName}} {{result.lastName}}</p> 
               
                     <p><strong>Order ID:</strong> {{result._id}}</p>
                     <p><strong>Payment ID:</strong> {{result.orderPaymentId}}</p>

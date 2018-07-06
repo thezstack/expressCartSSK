@@ -55,8 +55,7 @@ router.get('/payment/:orderId', async (req, res, next) => {
 });
 
 router.get('/checkout', async (req, res, next) => {
-    let config = req.app.config;
-    console.log(config)
+
     // if there is no items in the cart then render a failure
     if(!req.session.cart){
         req.session.message = 'The are no items in your cart. Please add some items before checking out';

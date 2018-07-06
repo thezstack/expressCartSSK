@@ -3,7 +3,7 @@ ENV NODE_VERSION 8.9.4
 RUN mkdir -p /var/expressCart
 WORKDIR /var/expressCart
 
-COPY bin/ /var/expressCart/bin/
+# COPY bin/ /var/expressCart/bin/
 COPY config/ /var/expressCart/config/
 COPY public/ /var/expressCart/public/
 COPY routes/ /var/expressCart/routes/

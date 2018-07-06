@@ -1,7 +1,0 @@
-{
-    "secretKey": "sk_test_HF8skRtQCqBX1AotyCfJQNKA",
-    "publicKey": "pk_test_9MZcliJtBLofEe03V3cQ916t",
-    "stripeCurrency": "usd",
-    "stripeDescription": "school supplies kit purchase",
-    "stripeLogoURL": "https://school-kits/public/uploads/pencil-case.svg"
-}

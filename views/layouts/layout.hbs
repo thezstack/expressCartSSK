@@ -19,11 +19,8 @@
         {{/if}}
 		<meta name="keywords" content="{{config.cartTitle}}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css">
-        
          <link rel="stylesheet" href="/stylesheets/bootstrap-xl.css">
         <link rel="stylesheet" href="/stylesheets/index.css">
-
-
         <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">         
         <link rel="stylesheet" href="/stylesheets/pushy.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.css" />
@@ -35,20 +32,9 @@
         {{#if admin}}
         <link rel="stylesheet" href="/stylesheets/admin{{config.env}}.css">
         {{/if}}
-        <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/xml/xml.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
-        <script src="/javascripts/jquery.bootpag.min.js"></script>
-        <script src="/javascripts/cssbeautify.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
-		<script src="/javascripts/expressCart{{config.env}}.js"></script>
-        <script src="/javascripts/jquery.dotdotdot.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
+       
+        
         <!-- SEO data -->
         <link rel="canonical" href="{{config.baseUrl}}" />
         <meta name="referrer" content="origin" />
@@ -82,7 +68,7 @@
     <body>
     {{/if}}
 		<!-- Static navbar -->
-	    <nav class="navbar navbar-default navbar-static-top">
+	    <nav class="navbar navbar-default navbar-static-top " >
 			<div class="container-fluid mainNavBar " style="border-bottom: 5px solid #e7e9ec;">
 				<div class="navbar-header">
 					{{!-- <button type="button" class="navbar-toggle collapsed offcanvas-trigger" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -105,10 +91,11 @@
                         {{/isNull}}
                     {{/if}}
 				</div>
-				<div id="navbar" class="">
+				<div id="navbar" >
 					<ul class="nav navbar-nav" style="float:right">
                         {{#unless admin}}
-												<li><a href="/HQA">HQA</a> </li>
+												<li style="font-weight: bold;"><a href="/HQA">HQA</a> </li>
+                                                <li><a href="/faq">FAQs</a> </li>
                         {{#ifCond page '!=' 'checkout'}}
                         {{#ifCond page '!=' 'pay'}}
 
@@ -154,8 +141,21 @@
         <input type="hidden" id="cartCheckout" value="{{checkout}}">
         <input type="hidden" id="cartTheme" value="{{config.theme}}">
 		<div id="notify_message"></div>
-
+            
         <script src="/javascripts/pushy.min.js"></script>
+                <script defer src="https://use.fontawesome.com/releases/v5.0.12/js/all.js" integrity="sha384-Voup2lBiiyZYkRto2XWqbzxHXwzcm4A5RfdfG6466bu5LqjwwrjXCMBQBLMWh7qR" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/codemirror.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/css/css.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.20.2/mode/xml/xml.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+        <script src="/javascripts/jquery.bootpag.min.js"></script>
+        <script src="/javascripts/cssbeautify.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script> 
+		<script src="/javascripts/expressCart{{config.env}}.js"></script>
+        <script src="/javascripts/jquery.dotdotdot.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
 	</body>
     {{#if admin}}
     <div>
